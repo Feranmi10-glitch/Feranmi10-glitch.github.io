@@ -5,5 +5,5 @@
 - [Ball Object Notation](02-ball-object)
 
 ## Projects
--[Interactive Scene](Whirlpool)
--[Arrays/Objects](Arrays object)
+- [Interactive Scene](Whirlpool)
+- [Arrays/Objects](Arrays-object)
