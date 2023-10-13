@@ -30,6 +30,7 @@ function spawnBall(){
     dx: random(-5,5),
     dy: random(-5,5),
   };
+  return theBall;
 }
 function moveBall(){
   theBall.x+=theBall.dx;
