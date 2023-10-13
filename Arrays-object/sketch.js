@@ -9,7 +9,7 @@ let theEllipse;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  let theEllipse = spawnEllipse();
+  theEllipse = spawnEllipse();
 }
 
 function draw() {
