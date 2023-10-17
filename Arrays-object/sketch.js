@@ -6,6 +6,7 @@
 // - describe what you did to take this project "above and beyond"
 
 let ellipseArray = []; 
+let angle = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -14,7 +15,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background("black");
   displayEllipse();
 }
 
@@ -30,9 +31,17 @@ function spawnEllipse(){
 function displayEllipse(){
   for(let i = 0;i < ellipseArray.length;i++){
     let theEllipse = ellipseArray[i];
-    for(let i = 0;i < 10 ;i++){
-      fill("white");
-      ellipse(theEllipse.x, theEllipse.y, i*theEllipse.radius);
+    fill("blue")
+      ellipse(theEllipse.x, theEllipse.y, theEllipse.radius/2);
+    }
+  for(let i = 20; i < 5000; i += 20){
+    push()
+    translate(width/2, height/2)
+    rotate(i + angle * 2)
+    noFill()
+    stroke(20, i*100, i-100)
+    ellipse(0, 0, i+20, i)
+    pop()
+   angle += 0.003
     }
   }
-}
