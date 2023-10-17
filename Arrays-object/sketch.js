@@ -31,17 +31,17 @@ function spawnEllipse(){
 function displayEllipse(){
   for(let i = 0;i < ellipseArray.length;i++){
     let theEllipse = ellipseArray[i];
-    fill("blue")
-      ellipse(theEllipse.x, theEllipse.y, theEllipse.radius/2);
-    }
-  for(let i = 20; i < 5000; i += 20){
-    push()
-    translate(width/2, height/2)
-    rotate(i + angle * 2)
-    noFill()
-    stroke(20, i*100, i-100)
-    ellipse(0, 0, i+20, i)
-    pop()
-   angle += 0.003
-    }
+    noFill();
+    ellipse(theEllipse.x, theEllipse.y, theEllipse.radius/2);
   }
+  for(let i = 20; i < windowWidth+windowHeight; i += 10){
+    push();
+    translate(width/2, height/2);
+    rotate(i + angle * 2);
+    noFill();
+    stroke(20, i*100, i-100);
+    ellipse(0, 0, i+20, i);
+    pop();
+    angle += 0.003;
+  }
+}
