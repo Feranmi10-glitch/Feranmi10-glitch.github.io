@@ -6,7 +6,13 @@
 // - describe what you did to take this project "above and beyond"
 
 let ellipseArray = []; // array for the ellipse
-let angle = 0;
+let angle = 0;//variable to calculate the angle for rotation and translation
+let backgroundSound;// variable for background sounds
+
+//function to create background sound
+function preload(){
+  backgroundSound= loadSound("TylerSong3_Normal.wav");
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -25,6 +31,7 @@ function spawnEllipse(){
     x: width/2,
     y: height/2,
     radius: 10,
+    angle: 0,
   };
   return theEllipse;
 }
@@ -38,6 +45,7 @@ function displayEllipse(){
   }
 
   // for loop to make the illusion according to the windowsize
+  console.log(ellipseArray.length);
   for(let i = 20; i < windowWidth+windowHeight; i += 10){
     push();
     translate(width/2, height/2);
@@ -47,5 +55,9 @@ function displayEllipse(){
     ellipse(0, 0, i+20, i);
     pop();
     angle += 0.003;
+  }
+
+  if (!backgroundSound.isPlaying()){
+    backgroundSound.loop();
   }
 }
