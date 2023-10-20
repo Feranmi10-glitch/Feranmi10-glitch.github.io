@@ -5,6 +5,7 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
+let scene =0;
 let ellipseArray = []; // array for the ellipse
 let angle = 0;//variable to calculate the angle for rotation and translation
 let backgroundSound;// variable for background sounds
@@ -22,7 +23,29 @@ function setup() {
 
 function draw() {
   background("black");
-  displayEllipse();
+  startScreen();
+  
+}
+function startScreen(){
+  switch (scene) {
+  case 0:
+    background("white");
+    fill("green");
+    textSize(70);
+    textAlign(CENTER);
+    textStyle("bolditalic");
+    text("ILLUSICA", windowWidth/2,windowHeight/2);
+    fill("blue");
+    textSize(40); 
+    text("PRESS SPACE TO START", windowWidth/2, windowHeight-200);
+    if (key === " "){
+      scene++;
+    }
+    break;
+  case 1:
+    displayEllipse();
+    break;
+    }
 }
 
 // function to make the ellipse
