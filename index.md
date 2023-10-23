@@ -7,7 +7,7 @@
 - [Perlin Noise Ball](04-noise-ball)
 - [Translate-Rotate](05-translate-rotate)
 - [Sounds and Images](06-sounds-images)
-
+- [Terrain Generation](07-terrain)
 ## Projects
 - [Interactive Scene](Whirlpool)
 - [Arrays/Objects](Arrays-object)
