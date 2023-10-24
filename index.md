@@ -8,6 +8,7 @@
 - [Translate-Rotate](05-translate-rotate)
 - [Sounds and Images](06-sounds-images)
 - [Terrain Generation](07-terrain)
+- [Draw a Grid](08-2d-grid)
 ## Projects
 - [Interactive Scene](Whirlpool)
 - [Arrays/Objects](Arrays-object)
