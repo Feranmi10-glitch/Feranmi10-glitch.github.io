@@ -10,6 +10,8 @@
 - [Terrain Generation](07-terrain)
 - [Draw a Grid](08-2d-grid)
 - [Grid Neighbours](09-grid-neighbours)
+
 ## Projects
 - [Interactive Scene](Whirlpool)
 - [Arrays/Objects](Arrays-object)
+- [2D Array Grid](Tic-Tac-Toe)
