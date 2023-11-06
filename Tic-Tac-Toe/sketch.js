@@ -37,10 +37,10 @@ function mousePressed(){
   let y = Math.floor(mouseY/cellSize);
   let x = Math.floor(mouseX/cellSize);
   if (grid[y][x] === 0){
-    grid[y][x] =image(xShape, x*cellSize, y*cellSize, cellSize, cellSize);
+    grid[y][x] = 1;
   }
   else{
-    grid[y][x] = image(oShape, x * cellSize, y * cellSize, cellSize, cellSize);
+    grid[y][x] = 0;
   }
   
 }
@@ -55,10 +55,10 @@ function displayGrid() {
   for (let y = 0; y < GRID_SIZE; y++) {
     for (let x = 0; x < GRID_SIZE; x++) {
       if (grid[y][x] === 0) {
-        image(xShape, x*cellSize, y*cellSize, cellSize, cellSize);
+        fill("white");
       }
       if (grid[y][x] === 1) {
-        image(oShape, x * cellSize, y * cellSize, cellSize, cellSize);  
+        fill("black");  
       }
       rect(x*cellSize, y*cellSize, cellSize, cellSize);
     }
