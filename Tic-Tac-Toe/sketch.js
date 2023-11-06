@@ -10,6 +10,7 @@ let cellSize;
 const GRID_SIZE = 3;
 let xShape;
 let oShape;
+let turn = true;
 
 function preload(){
   xShape = loadImage("x tictactoe.png");
@@ -29,7 +30,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background("white");
   displayGrid();
 }
 
@@ -37,12 +38,14 @@ function mousePressed(){
   let y = Math.floor(mouseY/cellSize);
   let x = Math.floor(mouseX/cellSize);
   if (grid[y][x] === 0){
-    grid[y][x] = 1;
-  }
-  else{
-    grid[y][x] = 0;
-  }
-  
+    if(turn){
+      grid[y][x] = 1;
+    } 
+    else {
+      grid[y][x] = 2;
+    }
+    turn = !turn;
+  } 
 }
 
 function keyTyped() {
@@ -56,11 +59,18 @@ function displayGrid() {
     for (let x = 0; x < GRID_SIZE; x++) {
       if (grid[y][x] === 0) {
         fill("white");
+        rect(x*cellSize, y*cellSize, cellSize, cellSize);
       }
       if (grid[y][x] === 1) {
-        fill("black");  
+        // fill("black");  
+        // rect(x*cellSize, y*cellSize, cellSize, cellSize);
+        image(xShape, x*cellSize, y*cellSize, cellSize, cellSize);
       }
-      rect(x*cellSize, y*cellSize, cellSize, cellSize);
+      if (grid[y][x] === 2) {
+        // fill("black");  
+        // rect(x*cellSize, y*cellSize, cellSize, cellSize);
+        image(oShape, x*cellSize, y*cellSize, cellSize, cellSize);
+      }
     }
   }
 }
