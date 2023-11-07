@@ -32,6 +32,7 @@ function setup() {
 function draw() {
   background("white");
   displayGrid();
+ 
 }
 
 function mousePressed(){
@@ -64,11 +65,15 @@ function displayGrid() {
       if (grid[y][x] === 1) {
         // fill("black");  
         // rect(x*cellSize, y*cellSize, cellSize, cellSize);
+        fill(255, 255, 255, 255);
+        rect(x*cellSize, y*cellSize, cellSize, cellSize);
         image(xShape, x*cellSize, y*cellSize, cellSize, cellSize);
       }
       if (grid[y][x] === 2) {
         // fill("black");  
         // rect(x*cellSize, y*cellSize, cellSize, cellSize);
+        fill(255, 255, 255, 255);
+        rect(x*cellSize, y*cellSize, cellSize, cellSize);
         image(oShape, x*cellSize, y*cellSize, cellSize, cellSize);
       }
     }
