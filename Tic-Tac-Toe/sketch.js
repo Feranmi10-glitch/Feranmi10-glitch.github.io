@@ -32,6 +32,7 @@ function setup() {
 function draw() {
   background("white");
   displayGrid();
+  playGame();
  
 }
 
@@ -80,6 +81,13 @@ function displayGrid() {
   }
 }
 
+function playGame(){
+  if (grid[0][0]===1&&grid[0][1]===1&&grid[0][2]===1){
+    return endScreen;
+
+  }
+}
+
 function generateEmptyGrid(cols, rows) {
   let randomArray = [];
   for (let y = 0; y < cols; y++) {
@@ -89,4 +97,9 @@ function generateEmptyGrid(cols, rows) {
     }
   }
   return randomArray;
+}
+
+function endScreen(){
+  background("white");
+  text("x WINS", width/2,height/2 );
 }
