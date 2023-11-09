@@ -11,6 +11,7 @@ const GRID_SIZE = 3;
 let xShape;
 let oShape;
 let turn = true;
+let state = "game play";
 
 function preload(){
   xShape = loadImage("x tictactoe.png");
@@ -31,10 +32,18 @@ function setup() {
 
 function draw() {
   background("white");
-  displayGrid();
-  playGame();
- 
+  if (state === "end screenX"){
+    endScreenX();
+  } 
+  if (state === "end screenO"){
+    endScreenO();
+  }
+  else if (state === "game play") {
+    displayGrid();
+    playGame();
+  }
 }
+
 
 function mousePressed(){
   let y = Math.floor(mouseY/cellSize);
@@ -82,9 +91,32 @@ function displayGrid() {
 }
 
 function playGame(){
-  if (grid[0][0]===1&&grid[0][1]===1&&grid[0][2]===1){
-    return endScreen;
-
+  if (grid[0][0]===1 && grid[0][1]===1 && grid[0][2] === 1){
+    state = "end screenX";
+  }
+  if (grid[0][0]===1 && grid[1][0]===1 && grid[2][0] === 1){
+    state = "end screenX";
+  }
+  if (grid[2][0]===1 && grid[2][1]===1 && grid[2][2] === 1){
+    state = "end screenX";
+  }
+  if (grid[0][0]===1 && grid[0][1]===1 && grid[0][2] === 1){
+    state = "end screenX";
+  }
+  if (grid[0][0]===1 && grid[0][1]===1 && grid[0][2] === 1){
+    state = "end screenX";
+  }
+  if (grid[0][0]===1 && grid[0][1]===1 && grid[0][2] === 1){
+    state = "end screenX";
+  }
+  if (grid[0][0]===1 && grid[0][1]===1 && grid[0][2] === 1){
+    state = "end screenX";
+  }
+  if (grid[0][0]===1 && grid[0][1]===1 && grid[0][2] === 1){
+    state = "end screenX";
+  }
+  if (grid[0][0]===2&& grid[0][1]===2 && grid[0][2] === 2){
+    state = "end screenO";
   }
 }
 
@@ -99,7 +131,12 @@ function generateEmptyGrid(cols, rows) {
   return randomArray;
 }
 
-function endScreen(){
+function endScreenX(){
   background("white");
-  text("x WINS", width/2,height/2 );
+  text("X WINS", width/2,height/2 );
+}
+
+function endScreenO(){
+  background("white");
+  text("O WINS", width/2,height/2 );
 }
