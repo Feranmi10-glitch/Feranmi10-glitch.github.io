@@ -11,6 +11,7 @@
 - [Draw a Grid](08-2d-grid)
 - [Grid Neighbours](09-grid-neighbours)
 - [Dog OOP Demo](10-dog-oop)
+- [Walker OOP Demo](11-walker-oop)
 
 ## Projects
 - [Interactive Scene](Whirlpool)
