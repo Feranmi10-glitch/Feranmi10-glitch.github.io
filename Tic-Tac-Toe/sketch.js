@@ -3,7 +3,7 @@
 // October 27th, 2023.
 //
 // Extra for Experts:
-// - describe what you did to take this project "above and beyond"
+// -I think the only thing I improved on was importing a font for this project.
 
 let grid;
 let cellSize;
@@ -12,10 +12,17 @@ let xShape;
 let oShape;
 let turn = true;
 let state = "game play";
+let backgroundSound;
+let soundEffect;
+
 
 function preload(){
   xShape = loadImage("x tictactoe.png");
   oShape = loadImage("o tictactoe.png");
+  titleFont = loadFont("PixelifySans-Bold.ttf");
+  backgroundSound = loadSound("WereWasI.ogg");
+  soundEffect = loadSound("click_sound_2.mp3");
+  backgroundSound.setVolume(0.5);
 }
 
 function setup() {
@@ -31,7 +38,9 @@ function setup() {
 }
 
 function draw() {
-  background("white");
+  if (state === "start screen") {
+    startScreen();
+  }
   if (state === "end screenX"){
     endScreenX();
   } 
@@ -44,18 +53,35 @@ function draw() {
   }
 }
 
+function startScreen() {
+  background("white");
+  fill("red");
+  textSize(70);
+  textAlign(CENTER);
+  textFont(titleFont);
+  text("TIC-TAC-TOE", width / 2, height / 2);
+  textSize(40);
+  text("Press SPACE to START", width / 2, height-200);
+}
 
 function mousePressed(){
   let y = Math.floor(mouseY/cellSize);
   let x = Math.floor(mouseX/cellSize);
   if (grid[y][x] === 0){
-    grid[y][x] = 1;
+    if(turn){
+      grid[y][x] = 1;
+    } 
+    else {
+      grid[y][x] = 2;
+    }
+    turn = !turn;
+  } 
+  soundEffect.play();
+  if(!backgroundSound.isPlaying()){
+    backgroundSound.loop();
   }
-  else{
-    grid[y][x] = 0;
-  
 }
-}
+
 function keyTyped() {
   if (key === "e") {
     grid = generateEmptyGrid(GRID_SIZE, GRID_SIZE);
@@ -100,22 +126,43 @@ function playGame(){
   if (grid[2][0]===1 && grid[2][1]===1 && grid[2][2] === 1){
     state = "end screenX";
   }
-  if (grid[0][0]===1 && grid[0][1]===1 && grid[0][2] === 1){
+  if (grid[0][2]===1 && grid[1][2]===1 && grid[2][2] === 1){
     state = "end screenX";
   }
-  if (grid[0][0]===1 && grid[0][1]===1 && grid[0][2] === 1){
+  if (grid[1][0]===1 && grid[1][1]===1 && grid[1][2] === 1){
     state = "end screenX";
   }
-  if (grid[0][0]===1 && grid[0][1]===1 && grid[0][2] === 1){
+  if (grid[0][1]===1 && grid[1][1]===1 && grid[2][1] === 1){
     state = "end screenX";
   }
-  if (grid[0][0]===1 && grid[0][1]===1 && grid[0][2] === 1){
+  if (grid[0][0]===1 && grid[1][1]===1 && grid[2][2] === 1){
     state = "end screenX";
   }
-  if (grid[0][0]===1 && grid[0][1]===1 && grid[0][2] === 1){
+  if (grid[2][0]===1 && grid[1][1]===1 && grid[0][2] === 1){
     state = "end screenX";
   }
   if (grid[0][0]===2&& grid[0][1]===2 && grid[0][2] === 2){
+    state = "end screenO";
+  }
+  if (grid[0][0]===2 && grid[1][0]===2 && grid[2][0] === 2){
+    state = "end screenO";
+  }
+  if (grid[2][0]===2 && grid[2][1]===2 && grid[2][2] === 2){
+    state = "end screenO";
+  }
+  if (grid[0][2]===2 && grid[1][2]===2 && grid[2][2] === 2){
+    state = "end screenO";
+  }
+  if (grid[1][0]===2 && grid[1][1]===2 && grid[1][2] === 2){
+    state = "end screenO";
+  }
+  if (grid[0][1]===2 && grid[1][1]===2 && grid[2][1] === 2){
+    state = "end screenO";
+  }
+  if (grid[0][0]===2 && grid[1][1]===2 && grid[2][2] === 2){
+    state = "end screenO";
+  }
+  if (grid[2][0]===2 && grid[1][1]===2 && grid[0][2] === 2){
     state = "end screenO";
   }
 }
@@ -133,10 +180,18 @@ function generateEmptyGrid(cols, rows) {
 
 function endScreenX(){
   background("white");
+  fill("black");
+  textSize(70);
+  textFont(titleFont);
+  textAlign("center");
   text("X WINS", width/2,height/2 );
 }
 
 function endScreenO(){
   background("white");
+  fill("black");
+  textSize(70);
+  textFont(titleFont);
+  textAlign("center");
   text("O WINS", width/2,height/2 );
 }
