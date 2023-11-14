@@ -38,6 +38,7 @@ function setup() {
 }
 
 function draw() {
+  background("white");
   if (state === "start screen") {
     startScreen();
   }
