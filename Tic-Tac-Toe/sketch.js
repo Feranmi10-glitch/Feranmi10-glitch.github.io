@@ -14,7 +14,7 @@ let turn = true;
 let state = "game play";
 let backgroundSound;
 let soundEffect;
-
+let titleFont;
 
 function preload(){
   xShape = loadImage("x tictactoe.png");
