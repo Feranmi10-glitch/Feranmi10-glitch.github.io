@@ -12,6 +12,7 @@
 - [Grid Neighbours](09-grid-neighbours)
 - [Dog OOP Demo](10-dog-oop)
 - [Walker OOP Demo](11-walker-oop)
+- [Ball OOP Demo](12-ball-oop)
 
 ## Projects
 - [Interactive Scene](Whirlpool)
