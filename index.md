@@ -13,6 +13,7 @@
 - [Dog OOP Demo](10-dog-oop)
 - [Walker OOP Demo](11-walker-oop)
 - [Perlin Noise OOP Demo](12-perlin-noise-oop)
+- [Fireworks Demo](13-fireworks-oop)
 
 ## Projects
 - [Interactive Scene](Whirlpool)
