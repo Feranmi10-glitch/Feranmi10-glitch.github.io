@@ -14,6 +14,7 @@
 - [Walker OOP Demo](11-walker-oop)
 - [Perlin Noise OOP Demo](12-perlin-noise-oop)
 - [Fireworks Demo](13-fireworks-oop)
+- [Inheritance Demo](14-inheritance)
 
 ## Projects
 - [Interactive Scene](Whirlpool)
