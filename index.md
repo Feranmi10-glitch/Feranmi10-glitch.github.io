@@ -15,6 +15,7 @@
 - [Perlin Noise OOP Demo](12-perlin-noise-oop)
 - [Fireworks Demo](13-fireworks-oop)
 - [Inheritance Demo](14-inheritance)
+- [Collision Demo](15-collision)
 
 ## Projects
 - [Interactive Scene](Whirlpool)
