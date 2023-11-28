@@ -35,7 +35,7 @@ class Walker{
       //right
       this.x += this.speed;
     }
-}
+  }
 }
 
 let gabe;
