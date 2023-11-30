@@ -16,6 +16,7 @@
 - [Fireworks Demo](13-fireworks-oop)
 - [Inheritance Demo](14-inheritance)
 - [Collision Demo](15-collision)
+- [p5play template](16-p5play)
 
 ## Projects
 - [Interactive Scene](Whirlpool)
