@@ -17,6 +17,7 @@
 - [Inheritance Demo](14-inheritance)
 - [Collision Demo](15-collision)
 - [p5play template](16-p5play)
+- [Recursive Circles](17-recursive-circles)
 
 ## Projects
 - [Interactive Scene](Whirlpool)
